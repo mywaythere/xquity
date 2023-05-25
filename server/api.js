@@ -169,14 +169,14 @@ router.post("/occupation", (req, res) => {
 
 router.post("/spawn", (req, res) => {
   if (req.user) {
-    socketManager.addUserToGame(req.user);
+    socketManager.addUserToExplore(req.user);
   }
   res.send({});
 });
 
 router.post("/despawn", (req, res) => {
   if (req.user) {
-    socketManager.removeUserFromGame(req.user);
+    socketManager.removeUserFromExplore(req.user);
   }
   res.send({});
 });
