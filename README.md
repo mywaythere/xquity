@@ -19,10 +19,10 @@ For users, they can uncover and be more aware of the different types of unconsci
 Basic features for them: (with example cases)
 
 - New user sign-up✅ & build their profiles(age;environment;gender;etc) on the platform
-- Interactive features to choose different personas/circumstances to understand their potential unconscious biases:
+- Interactive features to choose different personas/circumstances and underbelow categories:
   1. Reviewing Resumes
   2. Decisions about promotions
-  3. Colleagues feedback
+  3. Colleagues feedback (add a note: this data could be used to assess unconcious bias)
 - Forum and followup chats for respectful and constructive conversations: ✅
   1. share experience ✅
   2. ask questions ✅
