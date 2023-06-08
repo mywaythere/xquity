@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const PortraitSchema = new mongoose.Schema({
+  _id: String,
   age: Number,
   gender: String,
   occupation: String,
