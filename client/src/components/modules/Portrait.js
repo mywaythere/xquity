@@ -22,13 +22,12 @@ const Portrait = (props) => {
   };
 
   function handleChangeGender(event) {
-    // TODO: update props.portrait.gender with value in event.target.gender
-    console.log(event.target.gender);
+    console.log(event.target.value)
+    props.portrait.gender = event.target.value;
   }
   const handleSubmitGender = (event) => {
     event.preventDefault();
-    // TODO: update to send JSON object referencing from props
-    post("/api/gender", body.gender);
+    post("/api/gender", {gender: props.portrait.gender});
   };
 
   function handleChangeOccupation(event) {
