@@ -6,7 +6,8 @@
   "scripts": {
     "hotloader": "webpack serve --config ./webpack.config.js --mode development --port 5050",
     "start": "nodemon",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -56,6 +57,8 @@
     "style-loader": "^2.0.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.1"
+    "webpack-dev-server": "^4.11.1",
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3"
   }
 }
