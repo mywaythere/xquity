@@ -128,7 +128,7 @@ router.post("/story", auth.ensureLoggedIn, (req, res) => {
   newStory.save().then((story) => res.send(story));
 });
 router.post("/age", auth.ensureLoggedIn, (req, res) => {
-  Portrait.findByIdAndUpdate(req.query.userid, { age: req.body.content })
+  Portrait.findByIdAndUpdate(req.user._id, { age: req.body.age }, { upsert: true })
     .then(() => res.send("Successful"))
     .catch((err) => {
       const portrait = new Portrait({
@@ -141,7 +141,7 @@ router.post("/age", auth.ensureLoggedIn, (req, res) => {
     });
 });
 router.post("/gender", auth.ensureLoggedIn, (req, res) => {
-  Portrait.findByIdAndUpdate(req.query.userid, { gender: req.body.content })
+  Portrait.findByIdAndUpdate(req.user._id, { gender: req.body.gender }, { upsert: true })
     .then(() => res.send("Successful"))
     .catch((err) => {
       const portrait = new Portrait({
