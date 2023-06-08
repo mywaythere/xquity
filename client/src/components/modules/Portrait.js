@@ -11,24 +11,33 @@ import { post } from "../../utilities";
 const Portrait = (props) => {
   const body = { age: props.portrait.age, gender: props.portrait.gender, occupation: props.portrait.occupation};
   function handleChangeAge(event) {
-    console.log(event.target.value);
+    // updated props.portrait reference instead of using body variable.
+    // I don't think that the body variable is actually required.
+    props.portrait.age = event.target.value;
   }
   const handleSubmitAge = (event) => {
     event.preventDefault();
-    post("/api/age", body.age);
+    // here i just use the props.portrait reference to send the post request.
+    post("/api/age", {age: props.portrait.age} );
   };
+
   function handleChangeGender(event) {
+    // TODO: update props.portrait.gender with value in event.target.gender
     console.log(event.target.gender);
   }
   const handleSubmitGender = (event) => {
     event.preventDefault();
+    // TODO: update to send JSON object referencing from props
     post("/api/gender", body.gender);
   };
+
   function handleChangeOccupation(event) {
+    // TODO: update props.portrait.occupation with value in event.target.occupation
     console.log(event.target.occupation);
   }
   const handleSubmitOccupation = (event) => {
     event.preventDefault();
+    // TODO: update to send JSON object referencing from props
     post("/api/occupation", body.occupation);
   };
   return (
@@ -36,7 +45,7 @@ const Portrait = (props) => {
       <div className="Portrait-story">
         <p className="Portrait-storyContent">
           Age:<input value={props.portrait.age} onChange={handleChangeAge} className="NewPostInput-input" />
-          <button type="submit" className="NewPostInput-button u-pointer" onClick={handleSubmitAge}>Edit</button>
+          <button type="button" className="NewPostInput-button u-pointer" onClick={handleSubmitAge}>Edit</button>
         </p>
         <p className="Portrait-storyContent">
           Gender:<input value={props.portrait.gender} onChange={handleChangeGender} className="NewPostInput-input" />
