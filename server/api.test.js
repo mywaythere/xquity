@@ -1,9 +1,10 @@
-/*const request = require("supertest");
+const request = require("supertest");
+const app = require("./api");
+
 describe('test for story getting', () => {
-    let httpsServer;
-    it('shoud return http code 2000 when retrieving story', done => {
-        request(httpsServer)
-            .get('/stories')
-            .expect(200, done);
+    test ('should return http code 200 when retrieving story', async () => {
+        const res = await request(app).get('/stories');
+
+        expect(res.statusCode).toBe(200);
     })
-})*/
+})
